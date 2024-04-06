@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: process.env.GMAILUSER,
-        pass: process.env.GMAILPASS
+        user: process.env.MAILUSER,
+        pass: process.env.MAILPASS
     }
 });
 
@@ -97,7 +97,7 @@ app.post('/signup', async (req, res) => {
 async function sendWelcomeEmail(name, email) {
     return new Promise((resolve, reject) => {
         const mail = {
-            from: process.env.GMAILUSER,
+            from: process.env.MAILUSER,
             to: email,
             subject: `Hola ${name}!`,
             text: 'Hola, bienvenido!',
