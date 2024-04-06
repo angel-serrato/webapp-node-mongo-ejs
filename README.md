@@ -59,6 +59,8 @@ https://www.youtube.com/watch?v=QzEjUOYNoIs connecting to mongodb atlas
 
 https://www.youtube.com/watch?v=-NfsmF-6BHo dotenv variables
 
+https://www.youtube.com/watch?v=rleozFydcKk nodemailer con gmail
+
 ## DevDependencies
 
 npm install express
@@ -70,3 +72,5 @@ npm install dotenv
 npm install express-validator
 
 npm nodemailer
+
+npm bcrypt
