@@ -63,6 +63,8 @@ https://www.youtube.com/watch?v=rleozFydcKk nodemailer con gmail
 
 ## DevDependencies
 
+express es un framework
+
 npm install express
 
 npm install mongoose
@@ -75,4 +77,10 @@ npm nodemailer
 
 npm bcrypt
 
+npm morgan => muestra las peticiones que van llegando
+
 usar https://ethereal.email/ es un smtp falso para enviar correos de confirmacion de creacion de cuenta 
+
+Ctrl + Backspace => borra la ultima palabra escrita en vscode
+
+nodemailer config example = https://nodemailer.com/about/#example
