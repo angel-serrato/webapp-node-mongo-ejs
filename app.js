@@ -47,36 +47,74 @@ app.get('/signup', (req, res) => {
     res.sendFile(path.join(templatePath, 'signup.html'));
 });
 
+// app.post('/signup', async (req, res) => {
+//     try {
+//         const data = {
+//             name: req.body.name,
+//             email: req.body.email,
+//             password: req.body.password
+//         }
+//         await collection.insertMany([data]);
+//         let mail = {
+//             from: process.env.GMAILUSER,
+//             to: req.body.email,
+//             subject: "Hola " + req.body.name + "!",
+//             text: "Hola, bienvenido!",
+//             html: `
+//                     <h2>Hola, bienvenido a mi página web!</h2>
+//                 `
+//         };
+//         transporter.sendMail(mail, (err, info) => {
+//             if (err) {
+//                 console.log("Error sending email: ", err);
+//             } else {
+//                 console.log("Email sent. ", info);
+//             }
+//         });
+//         res.sendFile(path.join(templatePath, 'home.html'));
+//     } catch (error) {
+//         console.error('Error al registrar al usuario:', error);
+//         res.status(500).send('Error al registrar al usuario');
+//     }
+// });
+
 app.post('/signup', async (req, res) => {
     try {
         const data = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password
-        }
-        await collection.insertMany([data]);
-        let mail = {
-            from: process.env.GMAILUSER,
-            to: req.body.email,
-            subject: "Hola " + req.body.name + "!",
-            text: "Hola, bienvenido!",
-            html: `
-                    <h2>Hola, bienvenido a mi página web!</h2>
-                `
         };
-        transporter.sendMail(mail, (err, info) => {
-            if (err) {
-                console.log("Error sending email: ", err);
-            } else {
-                console.log("Email sent. ", info);
-            }
-        });
+        await collection.insertMany([data]);
+        await sendWelcomeEmail(req.body.name, req.body.email);
         res.sendFile(path.join(templatePath, 'home.html'));
     } catch (error) {
         console.error('Error al registrar al usuario:', error);
         res.status(500).send('Error al registrar al usuario');
     }
 });
+
+async function sendWelcomeEmail(name, email) {
+    return new Promise((resolve, reject) => {
+        const mail = {
+            from: process.env.GMAILUSER,
+            to: email,
+            subject: `Hola ${name}!`,
+            text: 'Hola, bienvenido!',
+            html: '<h2>Hola, bienvenido a mi página web!</h2>'
+        };
+
+        transporter.sendMail(mail, (err, info) => {
+            if (err) {
+                console.log("Error sending email: ", err);
+                reject(err);
+            } else {
+                console.log("Email sent. ", info);
+                resolve(info);
+            }
+        });
+    });
+}
 
 app.post('/login', async (req, res) => {
     try {

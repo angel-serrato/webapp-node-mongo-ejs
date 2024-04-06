@@ -74,3 +74,5 @@ npm install express-validator
 npm nodemailer
 
 npm bcrypt
+
+usar https://ethereal.email/ es un smtp falso para enviar correos de confirmacion de creacion de cuenta 
