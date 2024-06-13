@@ -10,13 +10,9 @@ const transporter = nodemailer.createTransport({
         user: process.env.MAILUSER,
         pass: process.env.MAILPASS
     },
-    // tls: {
-    //     rejectUnauthorized: false
-    // }
 });
 
 /* Verifying the SMTP connection  */
-
 transporter.verify((error, success) => {
     if (error) {
         console.log(error);
@@ -25,15 +21,14 @@ transporter.verify((error, success) => {
     }
 });
 
-async function sendEmail(username, mail) {
+async function sendEmail(mail) {
     const info = await transporter.sendMail({
         from: process.env.MAILUSER,
         to: mail,
-        subject: `Hola ${username}!`,
+        subject: `Hola!`,
         text: "Hello world?",
         html: "<b>Hola mundo desde node mailer</b>",
     });
-    console.log("Message sent: %s", info.messageId);
 }
 
 // sendEmail(username, mail).catch(console.error);

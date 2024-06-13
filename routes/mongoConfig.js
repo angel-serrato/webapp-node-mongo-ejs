@@ -11,10 +11,6 @@ mongoose.connect(process.env.MONGODB_URL)
     });
 
 const LogInSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true
@@ -25,6 +21,6 @@ const LogInSchema = new mongoose.Schema({
     }
 });
 
-const collection = new mongoose.model('users', LogInSchema);
+const collection = new mongoose.model('usuarios', LogInSchema);
 
 module.exports = collection;

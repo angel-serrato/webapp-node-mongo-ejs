@@ -30,12 +30,11 @@ router.post('/login', async (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const data = {
-            name: req.body.name,
             email: req.body.email,
             password: req.body.password
         };
         await collection.insertMany([data]);
-        sendEmail(req.body.name, req.body.email);
+        sendEmail(req.body.email);
         res.sendFile(path.join(templatePath, 'home.html'));
     } catch (error) {
         console.error('Error al registrar al usuario:', error);
