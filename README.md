@@ -84,3 +84,7 @@ usar https://ethereal.email/ es un smtp falso para enviar correos de confirmacio
 Ctrl + Backspace => borra la ultima palabra escrita en vscode
 
 nodemailer config example = https://nodemailer.com/about/#example
+
+express js express sessions connect-flash
+
+https://www.youtube.com/watch?v=mm9oIxR8YDU&t=4s

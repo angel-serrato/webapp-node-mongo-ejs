@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/home', (req, res) => {
-    res.render('home', { title: 'Welcome' });
-    req.flash('success')
+    const messages = req.flash('welcome')
+    res.render('home', { title: 'Welcome to the dashboard', messages })
 });
 
 router.get('/login', (req, res) => {
@@ -26,20 +26,19 @@ router.get('/signup', (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        req.flash('error', 'Usuario o contraseña incorrecta')
-        const error = req.flash('error')
         const user = await collection.findOne({ email: req.body.email });
         if (user) {
             const passwordMatch = await bcrypt.compare(req.body.password, user.password);
             if (passwordMatch) {
-                req.flash('info', 'Bienvenido')
-                const messages = req.flash('info')
-                res.render('home', { messages })
+                req.flash('welcome', 'Welcome!')
+                res.redirect('/home')
             } else {
-                res.render('login', { error });
+                console.log('Usuario o contraseña incorrecto')
+                res.redirect('/login')
             }
         } else {
-            res.render('login', { error });
+            console.log('Usuario o contraseña incorrecto')
+            res.redirect('/login')
         }
     } catch (error) {
         console.error('Error de login:', error);
@@ -54,14 +53,15 @@ router.post('/signup', async (req, res) => {
         const data = {
             email: req.body.email,
             password: hashedPassword
-        };
-        await collection.insertMany([data]);
-        sendEmail(req.body.email);
-        res.render(path.join(templatePath, 'home'));
+        }
+        await collection.insertMany([data])
+        sendEmail(req.body.email)
+        req.flash('welcome', 'Welcome!')
+        res.redirect('home')
     } catch (error) {
-        console.error('Error al registrar al usuario:', error);
-        res.status(500).send('Error al registrar al usuario');
+        console.error('Error al registrar al usuario:', error)
+        res.status(500).send('Error al registrar al usuario')
     }
-});
+})
 
 module.exports = router;

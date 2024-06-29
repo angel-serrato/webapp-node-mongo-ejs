@@ -19,7 +19,7 @@ app.use(session({
         maxAge: 1000
     }
 }))
-app.use(flash({ sessionKeyName: 'flashMessage' }))
+app.use(flash());
 app.use('/', routes);
 
 app.set('view engine', 'ejs');
