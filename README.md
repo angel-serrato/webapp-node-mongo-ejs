@@ -27,7 +27,7 @@
 
 ## Overview
 
-![Screenshot](imagen)
+![Screenshot](https://github.com/angel-serrato/web-express-nodemailer-mongo/assets/155343972/1f808c27-e9ac-481e-bcb7-5e7bf91f84bf)
 
 Este proyecto implementa un sistema completo de inicio y cierre de sesión utilizando Node.js y Express, junto con otras tecnologías populares como MongoDB, Nodemailer para envío de correos electrónicos, y manejo de sesiones con express-session y connect-flash.
 
