@@ -22,16 +22,26 @@ transporter.verify((error, success) => {
 });
 
 async function sendEmail(mail) {
-    const info = await transporter.sendMail({
-        from: process.env.MAILUSER,
-        to: mail,
-        subject: `Hola!`,
-        text: "Hello world?",
-        html: "<b>Hola mundo desde node mailer</b>",
-    });
+    try {
+        const info = await transporter.sendMail({
+            from: process.env.MAILUSER,
+            to: mail,
+            subject: `Bienvenido a nuestra página web!`,
+            text: "Hello world?",
+            html: `
+                <h2>¡Bienvenido!</h2>
+                <p>Gracias por registrarte en nuestra página. Estamos emocionados de tenerte como parte de nuestra comunidad.</p>
+                <p>Aquí encontrarás recursos útiles y novedades sobre nuestros productos/servicios.</p>
+                <p>¡Esperamos que disfrutes tu experiencia con nosotros!</p>
+                <p>Saludos,<br>El equipo de SerratoDev.</p>
+                `,
+        });
+        return info
+    } catch (error) {
+        console.error('Error al enviar el correo de bienvenida:', error);
+        throw error;
+    }
 }
-
-// sendEmail(username, mail).catch(console.error);
 
 module.exports = transporter;
 module.exports = sendEmail;
