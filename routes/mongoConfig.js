@@ -7,7 +7,7 @@ mongoose.connect(process.env.MONGODB_URL)
         console.log('Connected to MongoDB');
     })
     .catch((error) => {
-        console.log(error, "Failed to connect to MongoDB");
+        console.log(error, 'Failed to connect to MongoDB');
     });
 
 const LogInSchema = new mongoose.Schema({

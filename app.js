@@ -13,11 +13,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 
 app.use(session({
-    secret: 'secret',
+    secret: 'estoesdemasiadosecretomucho',
     resave: false,
     saveUninitialized: false,
+    // Session timeout de 60 segundos
     cookie: {
-        maxAge: 1000
+        maxAge: 60000
     }
 }))
 app.use(flash())

@@ -2,19 +2,23 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.render('login')
+    res.render('login', { title: 'Log In' })
 })
 
 router.get('/home', (req, res) => {
-    res.render('home')
+    if (req.session.user) {
+        res.render('home', { title: 'Welcome to the Dashboard' })
+    } else {
+        res.redirect('login')
+    }
 })
 
 router.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login', { title: 'Log In' })
 })
 
 router.get('/signup', (req, res) => {
-    res.render('signup')
+    res.render('signup', { title: 'Register' })
 })
 
 module.exports = router

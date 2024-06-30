@@ -10,6 +10,7 @@ auth.post('/login', async (req, res) => {
         if (user) {
             const passwordMatch = await bcrypt.compare(req.body.password, user.password)
             if (passwordMatch) {
+                req.session.user = user
                 req.flash('mensaje', 'Welcome!')
                 res.status(200).redirect('/home')
             } else {
@@ -17,7 +18,7 @@ auth.post('/login', async (req, res) => {
                 res.status(404).redirect('/login');
             }
         } else {
-            req.flash('mensaje', 'The email or password is incorrect')
+            req.flash('mensaje', 'No password or email provided')
             res.status(404).redirect('/login')
         }
     } catch (error) {
@@ -35,10 +36,11 @@ auth.post('/signup', async (req, res) => {
         }
         await collection.insertMany([data])
         sendEmail(req.body.email)
+        req.session.user = data
         req.flash('mensaje', 'Welcome!')
         res.redirect('/home')
     } catch (error) {
-        req.flash('mensaje', 'An unexpected error ocurred')
+        req.flash('mensaje', 'No password or email provided')
         res.status(500).redirect('/signup')
     }
 })
