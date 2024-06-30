@@ -6,7 +6,7 @@ const path = require('path');
 const auth = require('./routes/auth')
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
@@ -35,6 +35,6 @@ app.use(routes)
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.listen(port, () => {
-    console.log(`App listening on port http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`App listening on port http://localhost:${PORT}`)
 })

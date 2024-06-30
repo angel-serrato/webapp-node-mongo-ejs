@@ -18,14 +18,14 @@
 
 ---
 
-- [Overview](#overview)
-  - [Built With](#built-with)
+- [Visa previa](#overview)
+  - [Hecho con](#built-with)
 - [Acknowledgements](#acknowledgements)
-- [Contact](#contact)
-- [Credits](#credits)
-- [Contact](#contact)
+- [Instalación](#acknowledgements)
+- [Contacto](#contact)
+- [Creditos](#credits)
 
-## Overview
+## Vista previa
 
 ![Screenshot](https://github.com/angel-serrato/web-express-nodemailer-mongo/assets/155343972/1f808c27-e9ac-481e-bcb7-5e7bf91f84bf)
 
@@ -33,19 +33,19 @@ Este proyecto implementa un sistema completo de inicio y cierre de sesión utili
 
 Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de plantillas para las vistas HTML.
 
-### Built With
+### Hecho con
 
+- [Node.js](https://nodejs.org/en)
+- [EJS](https://www.npmjs.com/package/ejs)
+- [Express.js](https://expressjs.com/)
+- [express-session](https://www.npmjs.com/package/express-session)
+- [connect-flash](https://www.npmjs.com/package/connect-flash)
+- [MongoDB](https://www.mongodb.com/)
+- [Nodemailer](https://nodemailer.com/)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Bootstrap](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
-- Node.js
-- MongoDB
-- EJS
-- Express.js
-- express-session
-- Nodemailer
-- bcrypt
-- connect-flash
 
 ## Acknowledgements
 
@@ -53,13 +53,54 @@ Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de pla
 - [Node.js](https://nodejs.org/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
 
-## Contact
+## Instalación
+
+### Requisitos previos
+
+Asegúrate de tener instalado lo siguiente antes de comenzar:
+
+- Node.js y npm(Node Package Manager)
+- MongoDB
+
+Sigue estos pasos para instalar y configurar el proyecto en tu máquina local:
+
+1. Forkea el repositorio.
+
+2. Clona el repositorio:
+
+```console
+git clone https://github.com/<usuario-github>/web-express-nodemailer-mongo
+```
+
+3. Instala las dependencias
+
+```console
+npm install
+```
+
+4. Configura las variables de entorno: 
+
+Crea un archivo .env en el directorio raíz del proyecto y configura las variables necesarias:
+
+```console
+CLUSTER = cluster de MongoDB
+MAILUSER = correo para Nodemailer
+MAILPASS = contraseña para Nodemailer
+```
+
+5. Ejecuta el servidor:
+
+```console
+npm start
+```
+
+## Contacto
 
 - Website [portfolio-angel-serrato.vercel.app](https://portfolio-angel-serrato.vercel.app/)
 - GitHub [@angel-serrato](https://github.com/angel-serrato)
 - LinkedIn [/in/angel-serrato/](https://www.linkedin.com/in/angel-serrato/)
 
-## Credits
+## Creditos
 
 https://www.youtube.com/watch?v=V8dYGNfHjfk creating the connection and crud operations
 
