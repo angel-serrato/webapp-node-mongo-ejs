@@ -88,3 +88,7 @@ nodemailer config example = https://nodemailer.com/about/#example
 express js express sessions connect-flash
 
 https://www.youtube.com/watch?v=mm9oIxR8YDU&t=4s
+
+Display Node.js Flash Messages using Connect Flash and EJS
+
+https://www.youtube.com/watch?v=lSa1EIJapLg&t=11s
