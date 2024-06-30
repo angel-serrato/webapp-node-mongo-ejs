@@ -18,14 +18,14 @@
 
 ---
 
-- [Visa previa](#overview)
-  - [Hecho con](#built-with)
+- [Overview](#overview)
+  - [Built with](#built-with)
 - [Acknowledgements](#acknowledgements)
-- [Instalación](#acknowledgements)
-- [Contacto](#contact)
-- [Creditos](#credits)
+- [Install](#install)
+- [Contact](#contact)
+- [Credits](#credits)
 
-## Vista previa
+## Overview
 
 ![Screenshot](https://github.com/angel-serrato/web-express-nodemailer-mongo/assets/155343972/1f808c27-e9ac-481e-bcb7-5e7bf91f84bf)
 
@@ -33,7 +33,7 @@ Este proyecto implementa un sistema completo de inicio y cierre de sesión utili
 
 Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de plantillas para las vistas HTML.
 
-### Hecho con
+### Built with
 
 - [Node.js](https://nodejs.org/en)
 - [EJS](https://www.npmjs.com/package/ejs)
@@ -53,7 +53,7 @@ Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de pla
 - [Node.js](https://nodejs.org/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
 
-## Instalación
+## Install
 
 ### Requisitos previos
 
@@ -94,13 +94,13 @@ MAILPASS = contraseña para Nodemailer
 npm start
 ```
 
-## Contacto
+## Contact
 
 - Website [portfolio-angel-serrato.vercel.app](https://portfolio-angel-serrato.vercel.app/)
 - GitHub [@angel-serrato](https://github.com/angel-serrato)
 - LinkedIn [/in/angel-serrato/](https://www.linkedin.com/in/angel-serrato/)
 
-## Creditos
+## Credits
 
 https://www.youtube.com/watch?v=V8dYGNfHjfk creating the connection and crud operations
 
