@@ -44,7 +44,7 @@ Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de pla
 - [Nodemailer](https://nodemailer.com/)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [Bootstrap](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Bootstrap](https://getbootstrap.com/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
 
 ## Acknowledgements
