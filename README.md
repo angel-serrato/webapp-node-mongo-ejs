@@ -1,8 +1,6 @@
-# Project
-
 <h1 align="center">Sign In | Sign Up using MongoDB</h1>
 
-<div align="center">Este proyecto implementa un sistema de inicio y cierre de sesión</div>
+<div align="center">This project implements a user sign-in and sign-up system</div>
 
 <!-- <div align="center">
   <h3>
@@ -20,18 +18,14 @@
 
 - [Overview](#overview)
   - [Built with](#built-with)
-- [Acknowledgements](#acknowledgements)
 - [Install](#install)
 - [Contact](#contact)
-- [Credits](#credits)
 
 ## Overview
 
 ![Screenshot](https://github.com/angel-serrato/web-express-nodemailer-mongo/assets/155343972/1f808c27-e9ac-481e-bcb7-5e7bf91f84bf)
 
-Este proyecto implementa un sistema completo de inicio y cierre de sesión utilizando Node.js y Express, junto con otras tecnologías populares como MongoDB, Nodemailer para envío de correos electrónicos, y manejo de sesiones con express-session y connect-flash.
-
-Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de plantillas para las vistas HTML.
+This project implements a complete user sign-in and sign-up system using Node.js and Express, along with other popular technologies such as MongoDB, Nodemailer for sending emails, and session management with `express-session` and `connect-flash`.
 
 ### Built with
 
@@ -47,61 +41,47 @@ Se utiliza bcrypt para el cifrado seguro de contraseñas y EJS como motor de pla
 - [Bootstrap](https://getbootstrap.com/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
 
-## Acknowledgements
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-
 ## Install
 
-### Requisitos previos
+Follow these steps to set up and run the project locally:
 
-Asegúrate de tener instalado lo siguiente antes de comenzar:
+1.  **Fork the repository.**
 
-- Node.js y npm(Node Package Manager)
-- MongoDB
+2.  **Clone the repository:**
 
-Sigue estos pasos para instalar y configurar el proyecto en tu máquina local:
+    ```console
+    git clone [https://github.com/](https://github.com/)<your-github-username>/web-express-nodemailer-mongo
+    ```
 
-1. Forkea el repositorio.
+3.  **Install dependencies:**
 
-2. Clona el repositorio:
+    ```console
+    npm install
+    ```
 
-```console
-git clone https://github.com/<usuario-github>/web-express-nodemailer-mongo
-```
+4.  **Configure environment variables:**
 
-3. Instala las dependencias
+    Create a `.env` file in the project's root directory and set the necessary variables:
 
-```console
-npm install
-```
+    ```console
+    CLUSTER = your MongoDB cluster connection string
+    MAILUSER = your Nodemailer email
+    MAILPASS = your Nodemailer password
+    ```
 
-4. Configura las variables de entorno: 
+5.  **Run the server:**
 
-Crea un archivo .env en el directorio raíz del proyecto y configura las variables necesarias:
-
-```console
-CLUSTER = cluster de MongoDB
-MAILUSER = correo para Nodemailer
-MAILPASS = contraseña para Nodemailer
-```
-
-5. Ejecuta el servidor:
-
-```console
-npm start
-```
+    ```console
+    npm start
+    ```
 
 ## Contact
 
-- Website [portfolio-angel-serrato.vercel.app](https://portfolio-angel-serrato.vercel.app/)
-- GitHub [@angel-serrato](https://github.com/angel-serrato)
-- LinkedIn [/in/angel-serrato/](https://www.linkedin.com/in/angel-serrato/)
+- Website - [Serrato.dev](https://www.serrato.dev)
+- LinkedIn - [@angel-serrato](https://www.linkedin.com/in/angel-serrato/)
+- GitHub - [@angel-serrato](https://github.com/angel-serrato)
 
-## Credits
-
+<!-- 
 https://www.youtube.com/watch?v=V8dYGNfHjfk creating the connection and crud operations
 
 https://www.youtube.com/watch?v=QzEjUOYNoIs connecting to mongodb atlas
@@ -119,3 +99,4 @@ https://www.youtube.com/watch?v=lSa1EIJapLg&t=11s Display Node.js Flash Messages
 ## DevDependencies
 
 https://ethereal.email/ es un smtp falso para enviar correos de confirmacion de creacion de cuenta 
+-->
